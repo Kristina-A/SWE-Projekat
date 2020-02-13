@@ -1,59 +1,30 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+## Instalacija Laravel Projekta
+- Preuzeti laravel projekat sa ove stranice
+- Kreirati lokalnu bazu podataka
+- Preuzeti composer https://getcomposer.org/download/
+- Otvoriti konzolu unutar root direktorijuma projekta (ili se prebaciti na root direktorijum komandom `cd`)
+- Preimenovati fajl `.env.example` u `.env` unutar root foldera projekta i promeniti informacije o bazi podataka po potrebi (potrebno je u konzoli unutar direktorijuma izvršiti komandu `mv .env.example .env`)
+- Izvršiti komandu `composer install` ili ```php composer.phar install```
+- Izvršiti komandu `php artisan key:generate` 
+- Izvršiti komandu `php artisan migrate`
+- Izvršiti komandu `php artisan db:seed` za automatsko ubacivanje podataka u bazu
+- Ako želite da resetujete bazu podataka izvršite sledeću komandu `php artisan migrate:refresh` ili `php artisan migrate:refresh --seed`
+- Ako se prilikom seedovanja javi izuzetak kao što je `ReflectionException  : Class CommentsTableSeeder does not exist` izvršiti komandu `composer dump-autoload` 
+- U slučaju da ne funkcioniše upload slika, obrisati folder `public/storage` i zatim izvršiti komandu `php artisan storage:link`
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+##### Aplikaciju pokrenuti komandom `php artisan serve`, ili ako želite da aplikacija bude vidljiva na lokalnoj mreži komandom `php artisan serve --host=IP_ADDRESS --port=PORT` gde je IP_ADDRESS lokalna ipv4 adresa računara na kome se pokreće server, npr. 192.168.0.12 (može se videti izvršenjem komande ipconfig u CMD-u) a PORT željeni port, npr. 8000
 
-## About Laravel
+### Ako projekat iz nekog razloga prestane da radi:
+```
+composer install
+php artisan migrate:refresh --seed
+```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Test nalozi (nakon izvršenja seed komande)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Tip naloga        | E-mail           | Lozinka  |
+| ------------- |:-------------:| -----:|
+| Super-Admin     | sadmin@test.com | admin |
+| Admin      | admin@test.com      |   admin |
+| Suspendovani korisnik | suspendovani@test.com      |    admin |
